@@ -1,0 +1,20 @@
+var gemCounter = 0
+
+func getGem() {
+    if isOnGem {
+        collectGem()
+        gemCounter = gemCounter + 1        
+    }
+    
+}
+
+while gemCounter < 5 {
+    moveForward() 
+    getGem()
+    if isBlocked && isBlockedLeft {
+        turnRight()
+    } else if isBlocked && isBlockedRight {
+        turnLeft()
+    }
+    
+}
