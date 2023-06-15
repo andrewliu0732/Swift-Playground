@@ -1,10 +1,10 @@
 let switchCounter = numberOfSwitches
-var gem = 0
-while switchCounter != gem {
+var gemCounter = 0
+while switchCounter != gemCounter {
     moveForward()
     if isOnGem {
         collectGem()
-        gem = gem + 1
+        gemCounter = gemCounter + 1
     }
     if isBlocked {
         turnRight()
