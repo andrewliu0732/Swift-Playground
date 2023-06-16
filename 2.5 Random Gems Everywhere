@@ -1,0 +1,34 @@
+let totalGems = randomNumberOfGems
+var gemCounter = 0
+
+
+func checkGem() {
+    if isOnGem {
+        collectGem()
+        gemCounter = gemCounter + 1
+    }
+}
+
+func keepGoing() {
+    while !isBlocked {
+        moveForward()
+        checkGem()
+    }
+    turnRight()
+    turnRight()
+}
+
+
+moveForward()
+pinkPortal.isActive = false
+keepGoing()
+keepGoing()
+pinkPortal.isActive = true
+keepGoing()
+pinkPortal.isActive = false
+keepGoing()
+bluePortal.isActive = false
+keepGoing()
+bluePortal.isActive = true
+keepGoing()
+keepGoing()
