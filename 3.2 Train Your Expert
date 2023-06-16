@@ -1,0 +1,27 @@
+func gemLock() {
+    if expert.isOnGem {
+        expert.collectGem()
+    }
+    expert.turnLockDown()
+}
+
+func goForever() {
+    while !expert.isBlocked {
+        expert.moveForward()
+    }
+    gemLock()
+    expert.turnRight()
+    expert.turnRight()
+}
+
+func trikeCross() {
+    for i in 1 ... 3 {
+        goForever()
+        goForever()
+        expert.moveForward()
+        expert.moveForward()
+        expert.turnLeft()
+    }
+}
+
+trikeCross()
