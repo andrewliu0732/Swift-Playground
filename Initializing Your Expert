@@ -1,3 +1,5 @@
+let expert = Expert()
+
 func gemLock() {
     if expert.isOnGem {
         expert.collectGem()
