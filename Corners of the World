@@ -1,0 +1,87 @@
+var gemCounter = 0
+var switchCounter = 0
+
+turnLeft()
+
+func checkBoth() {
+    if isOnGem {
+        collectGem()
+        gemCounter = gemCounter + 1
+    }
+    if isOnClosedSwitch {
+            toggleSwitch()
+            switchCounter = switchCounter + 1
+        }
+}
+
+func goBackwards() {
+    turnAround()
+    moveForward()
+    turnAround()
+}
+
+
+func doubleFoward() {
+    moveForward()
+    moveForward()
+}
+
+func turnAround() {
+    turnRight()
+    turnRight()
+}
+
+
+func aroundPortal() {
+    turnRight()        
+    moveForward()
+    checkBoth()
+    turnAround()
+    doubleFoward()
+    checkBoth()
+    turnAround()
+    moveForward()        
+    turnRight()          
+    moveForward()
+    checkBoth()
+    turnAround()
+    doubleFoward()
+    checkBoth()
+    goBackwards()
+}
+
+func getPortal() {
+    turnRight()
+    moveForward()
+    checkBoth()
+    turnAround()
+    moveForward()
+    turnRight()
+    goBackwards()
+    checkBoth()
+    moveForward()
+    turnLeft()
+}
+
+greenPortal.isActive = false
+orangePortal.isActive = false
+
+doubleFoward()
+turnRight()
+aroundPortal()
+doubleFoward()
+moveForward()
+aroundPortal()
+
+orangePortal.isActive = true
+goBackwards()
+moveForward()
+orangePortal.isActive = false
+getPortal()
+greenPortal.isActive = true
+for i in 1 ... 4 {
+    moveForward()
+}
+turnRight()
+greenPortal.isActive = false
+aroundPortal()
